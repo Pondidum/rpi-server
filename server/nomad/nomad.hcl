@@ -1,6 +1,6 @@
-data_dir = "/tmp/nomad/c"
+data_dir = "/opt/nomad/data"
 
-bind_addr = "192.168.1.179"
+# bind_addr = "192.168.1.179"
 
 server {
   enabled = true
@@ -11,7 +11,7 @@ client {
   enabled = true
 
   host_volume "host" {
-    path = "/srv/nomad/data/"
+    path = "/opt/nomad/volumes/host"
     read_only = false
   }
 }
