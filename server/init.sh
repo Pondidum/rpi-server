@@ -7,7 +7,9 @@ echo "export LC_ALL=C.UTF-8" >> "${HOME}/.profile"
 
 sudo apt install -yq \
   gpg \
-  jq
+  jq \
+  docker.io \
+  postgresql-client
 
 wget -O- https://apt.releases.hashicorp.com/gpg \
   | sudo gpg --dearmor -o /usr/share/keyrings/hashicorp-archive-keyring.gpg
