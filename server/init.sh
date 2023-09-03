@@ -2,6 +2,9 @@
 
 set -eu
 
+# fix language when SSHing in
+echo "export LC_ALL=C.UTF-8" >> "${HOME}/.profile"
+
 sudo apt install -yq \
   gpg \
   jq
