@@ -22,9 +22,6 @@ job "caddy" {
       port "http" {
         static = 80
       }
-      port "admin" {
-        to = 2019
-      }
     }
 
     # service discovery
