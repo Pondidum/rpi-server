@@ -60,4 +60,8 @@ echo "    Writing password policy"
 
 vault write sys/policies/password/default policy=@password_policy.hcl
 
+echo "    Configuring Profile"
+
+echo 'export "VAULT_ADDR=http://localhost:8200"' >> .profile
+
 echo "==> Vault initialised"

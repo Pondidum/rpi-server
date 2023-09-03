@@ -22,4 +22,8 @@ sudo systemctl daemon-reload
 sudo systemctl enable nomad
 sudo systemctl start nomad
 
+echo "    Configuring Profile"
+
+echo 'export "NOMAD_ADDR=http://localhost:4646"' >> .profile
+
 echo "==> Nomad done"
