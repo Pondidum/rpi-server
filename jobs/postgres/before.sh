@@ -1,6 +1,5 @@
 #!/bin/sh
 
-vault kv put \
-  -mount=kv /apps/postgres/super \
+nomad var put "secret/postgres/super" \
   "username=postgres" \
-  "password=$(vault read -field=password sys/policies/password/default/generate)"
+  "password=$(cat /proc/sys/kernel/random/uuid)"

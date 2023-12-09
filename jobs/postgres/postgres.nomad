@@ -34,12 +34,6 @@ job "postgres" {
       mode = "fail"
     }
 
-    vault {
-      policies = ["kv"]
-      env = false
-      change_mode = "noop"
-    }
-
     volume "data" {
       type      = "host"
       read_only = false
@@ -61,12 +55,12 @@ job "postgres" {
       }
 
       template {
-        destination = "secrets/vault.env"
+        destination = "secrets/postgres.env"
         env = true
         data = <<EOT
-        {{ with secret "kv/apps/postgres/super" -}}
-          POSTGRES_USER="{{ .Data.data.username }}"
-          POSTGRES_PASSWORD="{{ .Data.data.password }}"
+        {{ with nomadVar "secret/postgres/super" -}}
+          POSTGRES_USER="{{ .username }}"
+          POSTGRES_PASSWORD="{{ .password }}"
         {{ end -}}
         EOT
       }
