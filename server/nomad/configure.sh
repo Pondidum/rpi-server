@@ -14,7 +14,6 @@ sudo chown -R nomad:nomad "/opt/nomad/volumes"
 echo "    Copying configuration"
 sudo cp nomad.hcl /etc/nomad.d/nomad.hcl
 sudo cp nomad.service "/lib/systemd/system/nomad.service"
-sudo cp prestart.sh "/etc/nomad.d/prestart.sh"
 
 echo "    Configuring systemd"
 

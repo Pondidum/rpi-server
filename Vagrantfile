@@ -19,7 +19,6 @@ Vagrant.configure("2") do |config|
     cd /vagrant/server
 
     ./init.sh
-    ./vault/configure.sh
     ./nomad/configure.sh
   SCRIPT
 end
