@@ -1,8 +1,4 @@
-localhost {
-
-  handle {
-    respond "Oletko eksynyt?"
-  }
+{{ with nomadVar "kv/cluster_info" }}{{ .external_addr }}{{ end }} {
 
   {{- range nomadServices }}
   {{- range nomadService .Name }}
@@ -13,4 +9,8 @@ localhost {
   {{- end }}
   {{- end }}
   {{- end }}
+
+  handle {
+    respond "Oletko eksynyt?"
+  }
 }

@@ -20,5 +20,9 @@ Vagrant.configure("2") do |config|
 
     ./init.sh
     ./nomad/configure.sh
+
+    nomad var put "kv/cluster_info" \
+      "external_addr=$(ip -4 -o addr show eth0 | awk '{print $4}' | cut -d "/" -f 1 ):80"
+
   SCRIPT
 end

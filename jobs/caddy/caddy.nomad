@@ -50,14 +50,13 @@ job "caddy" {
 
       config {
         command = "caddy"
-        args    = [ "run", "--config", "local/Caddyfile" ]
+        args    = [ "run", "--config", "local/Caddyfile", "--watch" ]
       }
 
       template {
         data = file("Caddyfile.tpl")
         destination = "local/Caddyfile"
-        change_mode = "signal"
-        change_signal = "SIGHUP"
+        change_mode = "noop"
       }
 
       resources {
