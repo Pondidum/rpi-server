@@ -43,7 +43,7 @@ job "caddy" {
       driver = "exec"
 
       artifact {
-        source = "https://caddyserver.com/api/download?os=linux&arch=amd64"
+        source = "https://caddyserver.com/api/download?os=linux&arch=arm64"
         destination = "local/caddy"
         mode = "file"
       }
