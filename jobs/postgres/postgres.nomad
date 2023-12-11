@@ -66,7 +66,7 @@ job "postgres" {
       }
 
       resources {
-        memory = 100 # mb
+        memory = 500 # mb
       }
     }
   }
