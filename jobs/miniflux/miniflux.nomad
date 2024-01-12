@@ -38,6 +38,8 @@ DATABASE_URL=host={{ range nomadService "postgres" }}{{ .Address }}{{ end}} user
 BASE_URL=http://{{ env "NOMAD_IP_http" }}/miniflux
 RUN_MIGRATIONS=1
 LISTEN_ADDR={{ env "NOMAD_IP_http" }}:{{ env "NOMAD_PORT_http" }}
+POLLING_SCHEDULER=entry_frequency
+SCHEDULER_ENTRY_FREQUENCY_MIN_INTERVAL=180
         EOF
         destination = "local/miniflux.conf"
         change_mode = "signal"
